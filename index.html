@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUSSIBY KOMA - Stagiaire Comptable Opérationnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #16a085;
+            --accent-color: #3498db;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --gray-color: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-center {
+            text-align: center;
+        }
+
+        .section-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-left: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-list a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-list a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(22, 160, 133, 0.05) 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray-color);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-category li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: var(--light-color);
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .experience-header h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .experience-period {
+            color: var(--gray-color);
+            font-weight: 500;
+            background-color: var(--light-gray);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .context {
+            margin-bottom: 1.5rem;
+            color: var(--gray-color);
+            font-style: italic;
+        }
+
+        .actions-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .actions-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .actions-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .results {
+            background-color: rgba(22, 160, 133, 0.05);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .skills-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--light-gray);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Formation Section */
+        .formation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .formation-item, .certification-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .formation-item:hover, .certification-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .formation-item h3, .certification-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .formation-details, .certification-details {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .testimonial-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-item:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: rgba(22, 160, 133, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .testimonial-context {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-message {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--gray-color);
+        }
+
+        .contact-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--border-radius);
+            background-color: rgba(44, 62, 80, 0.05);
+        }
+
+        .contact-item:hover {
+            background-color: rgba(22, 160, 133, 0.1);
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-list.active {
+                transform: translateY(0);
+            }
+
+            .nav-list li {
+                margin: 0.8rem 0;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero .description {
+                font-size: 1.1rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-btns, .contact-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-item {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">OUSSIBY<span>KOMA</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-list" id="navList">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>OUSSIBY KOMA</h1>
+                <p class="tagline">Stagiaire Comptable Opérationnel & Passionné</p>
+                <p class="description">Je transforme les données commerciales en informations comptables fiables et exploitables. Jeune diplômé en Sciences Techniques Comptables et Financières, je maîtrise Odoo et Sage i7.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">📧 Me contacter</a>
+                    <a href="#" class="btn btn-outline" id="downloadCV">📄 Télécharger mon CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-center">
+                <h2>À propos de moi</h2>
+            </div>
+            <div class="about-content fade-in">
+                <p>Je suis un stagiaire comptable immédiatement opérationnel, spécialisé dans la gestion intégrée des flux commerciaux et financiers. Mon rôle consiste à faire le lien entre les opérations terrain et les exigences comptables, en assurant la fiabilité des données, le suivi des encaissements et la bonne tenue des stocks.</p>
+                <p>Titulaire d'une Licence en Sciences Techniques Comptables et Financières et d'un DUT Finance Comptabilité, j'ai choisi de me former sur les outils métiers modernes comme Odoo et Sage i7. Mes stages chez Bara Musso m'ont permis d'appliquer ces compétences en conditions réelles, de la facturation au rapprochement des stocks.</p>
+                <p>Je crois qu'une comptabilité fiable est avant tout une comptabilité connectée à l'activité réelle. Ma mission est de construire des ponts solides entre le commercial et le financier, pour offrir aux entreprises une vision claire, en temps réel, et des prises de décision éclairées.</p>
+                <p>Ce qui me distingue, c'est ma double compétence : une maîtrise technique avancée des logiciels Odoo (Ventes, Facturation, Inventaire) et Sage i7, alliée à une rigueur analytique et une capacité à comprendre les besoins opérationnels. Je suis productif dès le premier jour et capable de relier efficacement les processus métiers à la comptabilité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-center">
+                <h2>Mes compétences</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-chart-line"></i> Compétences Techniques & Fonctionnelles</h3>
+                    <ul>
+                        <li>Suivi comptable et facturation</li>
+                        <li>Gestion et rapprochement des stocks</li>
+                        <li>Contrôle des encaissements et suivi des impayés</li>
+                        <li>Analyse des flux commerciaux et financiers</li>
+                        <li>Respect des procédures comptables</li>
+                        <li>Structure des informations commerciales pour reporting</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in delay-1">
+                    <h3><i class="fas fa-tools"></i> Outils & Logiciels Maîtrisés</h3>
+                    <ul>
+                        <li>Odoo (Ventes, Facturation, Inventaire) – Niveau avancé</li>
+                        <li>Sage i7 Comptabilité – Bonne maîtrise</li>
+                        <li>Excel (Tableaux de suivi, reporting) – Niveau avancé</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in delay-2">
+                    <h3><i class="fas fa-user-check"></i> Soft Skills & Qualités</h3>
+                    <ul>
+                        <li>Rigueur et fiabilité</li>
+                        <li>Organisation et autonomie</li>
+                        <li>Apprentissage rapide</li>
+                        <li>Esprit d'analyse</li>
+                        <li>Travail en équipe</li>
+                        <li>Confidentialité des données</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in delay-3">
+                    <h3><i class="fas fa-language"></i> Langues</h3>
+                    <ul>
+                        <li>Français – Courant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-center">
+                <h2>Mes expériences</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Stage Gestion Comptable</h3>
+                            <p class="experience-company">Bara Musso</p>
+                        </div>
+                        <span class="experience-period">Janvier 2026 – Février 2026</span>
+                    </div>
+                    <p class="context">Intégré en période d'activité soutenue, le défi était d'assurer un suivi comptable précis des ventes tout en maintenant une traçabilité fiable des stocks. L'enjeu principal était la fiabilité des données financières malgré un volume important de transactions.</p>
+                    <ul class="actions-list">
+                        <li>Traitement et suivi systématique des commandes et factures via Odoo</li>
+                        <li>Contrôle quotidien des encaissements et identification proactive des impayés</li>
+                        <li>Réalisation et rapprochement d'inventaires physiques avec les données système</li>
+                        <li>Création de tableaux de suivi Excel pour le reporting commercial et comptable</li>
+                    </ul>
+                    <div class="results">
+                        <p>Fiabilité accrue des états de paiement clients et réduction des écarts de suivi. Amélioration de la visibilité sur les niveaux de stock et réduction des ruptures potentielles. Structuration des données commerciales permettant des rapprochements comptables plus rapides et précis.</p>
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-tag">Odoo (Ventes, Facturation)</span>
+                        <span class="skill-tag">Suivi des impayés</span>
+                        <span class="skill-tag">Gestion des stocks</span>
+                        <span class="skill-tag">Reporting</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Rigueur</span>
+                    </div>
+                </div>
+                <div class="experience-item fade-in delay-1">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Stage Logiciel Sage i7</h3>
+                            <p class="experience-company">[À COMPLÉTER – Nom de l'entreprise]</p>
+                        </div>
+                        <span class="experience-period">Octobre 2025 – Novembre 2025</span>
+                    </div>
+                    <p class="context">Découverte et prise en main d'un nouvel environnement comptable avec Sage i7. L'objectif était de saisir et organiser les données financières de manière rigoureuse pour alimenter la comptabilité générale.</p>
+                    <ul class="actions-list">
+                        <li>Saisie et vérification des écritures comptables sur Sage i7</li>
+                        <li>Organisation et classement des pièces justificatives</li>
+                        <li>Participation à la clôture mensuelle des comptes</li>
+                        <li>Apprentissage rapide des processus et des normes de l'entreprise</li>
+                    </ul>
+                    <div class="results">
+                        <p>Prise en main rapide du logiciel Sage i7 et contribution immédiate aux tâches de saisie. Amélioration de l'organisation des archives comptables. Renforcement de la précision des données saisies, limitant les erreurs de traitement.</p>
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-tag">Sage i7</span>
+                        <span class="skill-tag">Saisie comptable</span>
+                        <span class="skill-tag">Organisation</span>
+                        <span class="skill-tag">Respect des procédures</span>
+                        <span class="skill-tag">Apprentissage rapide</span>
+                        <span class="skill-tag">Confidentialité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation Section -->
+    <section id="formation">
+        <div class="container">
+            <div class="section-center">
+                <h2>Formation & certifications</h2>
+            </div>
+            <div class="formation-grid">
+                <div class="formation-item fade-in">
+                    <h3>Licence en Sciences Techniques Comptables et Financières</h3>
+                    <p class="formation-details">[À COMPLÉTER – Nom de l'université] | 2023 – 2024</p>
+                    <p>Spécialisation en gestion financière et outils informatisés</p>
+                </div>
+                <div class="formation-item fade-in delay-1">
+                    <h3>DUT Finance Comptabilité</h3>
+                    <p class="formation-details">Technolab ISTA | 2023 – 2024</p>
+                </div>
+                <div class="certification-item fade-in delay-2">
+                    <h3>Certifications & Formations logiciels</h3>
+                    <ul class="actions-list">
+                        <li>Maîtrise Opérationnelle d'Odoo (Ventes, Facturation, Inventaire) – Formation en ligne (2026)</li>
+                        <li>Utilisation de Sage i7 en Comptabilité – Formation pratique (2025)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-center">
+                <h2>Témoignages</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-item fade-in">
+                    <p class="testimonial-text">Oussiby s'est intégré très rapidement et a fait preuve d'une grande rigueur dans le suivi de nos facturations et de nos stocks. Son apport a été immédiat et précieux.</p>
+                    <p class="testimonial-author">Responsable Administratif & Financier</p>
+                    <p class="testimonial-context">Bara Musso</p>
+                </div>
+                <div class="testimonial-item fade-in delay-1">
+                    <p class="testimonial-text">Autonome et fiable, il a su maîtriser Sage i7 en un temps record et contribuer à la qualité de nos données comptables.</p>
+                    <p class="testimonial-author">Comptable</p>
+                    <p class="testimonial-context">[Entreprise du stage Sage i7]</p>
+                </div>
+                <div class="testimonial-item fade-in delay-2">
+                    <p class="testimonial-text">Profil opérationnel avec une excellente capacité à relier les aspects commerciaux et comptables. Très bonne maîtrise des outils modernes de gestion.</p>
+                    <p class="testimonial-author">Superviseur comptable</p>
+                    <p class="testimonial-context">[À COMPLÉTER]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <div class="section-center">
+                    <h2>Contactez-moi</h2>
+                </div>
+                <p class="contact-message">Je suis à la recherche d'une opportunité de stage ou d'un premier emploi dans un service comptable où je pourrais mettre à profit ma rigueur et ma maîtrise des outils. Si vous cherchez un profil opérationnel, rapide à monter en compétence et soucieux du détail, échangeons !</p>
+                <div class="contact-btns">
+                    <a href="mailto:oussibykoma@gmail.com" class="btn">💬 Discutons de votre opportunité</a>
+                    <a href="#" class="btn btn-outline" id="downloadCV2">⬇️ Télécharger mon CV complet</a>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:oussibykoma@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>oussibykoma@gmail.com</span>
+                    </a>
+                    <a href="https://wa.me/22390407649" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+223 90 40 76 49</span>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>[À COMPLÉTER – Profil LinkedIn]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>OUSSIBY KOMA &copy; <span id="currentYear"></span> - Tous droits réservés</p>
+            <p class="copyright">Stagiaire Comptable Opérationnel | Spécialiste Odoo & Sage i7</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('navList');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navList.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Download CV button simulation
+        document.querySelectorAll('#downloadCV, #downloadCV2').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("Pour simuler le téléchargement du CV, remplacez cette alerte par un lien vers votre fichier PDF. Exemple : window.open('Oussiby_Koma_Cv.PDF', '_blank');");
+                // Pour un véritable téléchargement : 
+                // window.open('Oussiby_Koma_Cv.PDF', '_blank');
+            });
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Check on load and scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Trigger initial animations
+        setTimeout(fadeInOnScroll, 300);
+    </script>
+</body>
+</html>
